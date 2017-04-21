@@ -1,0 +1,186 @@
+<?xml version="1.0"?>
+
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+<xs:element name="kytara">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="vyrobce" maxOccurs="1" minOccurs="1"/>
+        <xs:element ref="telo" maxOccurs="1" minOccurs="1"/>
+        <xs:element ref="krk" maxOccurs="1" minOccurs="1"/>
+        <xs:element ref="snimace" maxOccurs="3" minOccurs="1"/>
+        <xs:element ref="struny" maxOccurs="1" minOccurs="1"/>
+        <xs:element ref="hmatnik" maxOccurs="1" minOccurs="1"/>
+        <xs:element ref="kobylka" maxOccurs="1" minOccurs="1"/>
+        <xs:element ref="potenciometry" maxOccurs="4" minOccurs="1"/>
+        <xs:element ref="model" maxOccurs="1" minOccurs="1"/>
+        
+      </xs:sequence>
+      <xs:attribute name="znacka" type="xs:string"/>
+      <xs:attribute name="cena" type="xs:decimal"/>
+    </xs:complexType>
+  </xs:element>
+  
+
+  <xs:element name="vyrobce">
+    <xs:complexType>
+      
+      <xs:attribute name="stat" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="telo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="material" maxOccurs="1" minOccurs="1"/>
+      </xs:sequence>
+      
+       <xs:attribute name="vaha" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="material">
+    <xs:complexType>
+      <xs:attribute name="barva" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="krk">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="profil_krku" maxOccurs="1" minOccurs="1"/>
+      </xs:sequence>
+   </xs:complexType>
+  </xs:element>
+
+   <xs:element name="profil_krku">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="U"/>
+        <xs:enumeration value="C"/>
+        <xs:enumeration value="D"/>
+        </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+
+  <xs:element name="snimace">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="typ_snimace" maxOccurs="3" minOccurs="1"/>
+      </xs:sequence>
+       <xs:attribute name="pocet" type="xs:decimal"/>
+   </xs:complexType>
+  </xs:element>
+
+   <xs:element name="typ_snimace">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="Single Coil"/>
+        <xs:enumeration value="Humbucker"/>
+        <xs:enumeration value="P90"/>
+        </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+
+<xs:element name="struny">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="pocet_strun" maxOccurs="1" minOccurs="1"/>
+      </xs:sequence>
+       <xs:attribute name="tloustka" type="xs:decimal"/>
+   </xs:complexType>
+  </xs:element>
+
+  <xs:element name="pocet_strun">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+      	<xs:enumeration value="4"/>
+        <xs:enumeration value="6"/>
+        <xs:enumeration value="7"/>
+        <xs:enumeration value="8"/>
+        <xs:enumeration value="12"/>
+        </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+
+  <xs:element name="hmatnik">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="material_hmatniku" maxOccurs="1" minOccurs="1"/>
+      </xs:sequence>
+       <xs:attribute name="pocet_prazcu" type="xs:decimal"/>
+   </xs:complexType>
+  </xs:element>
+
+  <xs:element name="material_hmatniku">
+    <xs:complexType>
+      <xs:sequence>
+       </xs:sequence>
+      <xs:attribute name="drevo" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="kobylka">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="typ_kobylky" maxOccurs="1" minOccurs="1"/>
+      </xs:sequence>
+       <xs:attribute name="upevneni" type="xs:string"/>
+   </xs:complexType>
+  </xs:element>
+
+<xs:element name="typ_kobylky">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="Vintage"/>
+        <xs:enumeration value="Floyd_Rose"/>
+        <xs:enumeration value="Bigsby"/>
+        </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+
+  <xs:element name="potenciometry">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="potenciometr" maxOccurs="4" minOccurs="1"/>
+      </xs:sequence>
+    
+   </xs:complexType>
+  </xs:element>
+
+  <xs:element name="potenciometr">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="volume"/>
+        <xs:enumeration value="tone"/>
+        
+         </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+
+ <xs:element name="model">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="typ_tela" maxOccurs="1" minOccurs="1"/>
+      </xs:sequence>
+       <xs:attribute name="lak" type="xs:string"/>
+   </xs:complexType>
+  </xs:element>
+
+  <xs:element name="typ_tela">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="Les Paul"/>
+        <xs:enumeration value="Telecaster"/>
+        <xs:enumeration value="Stratocaster"/>
+        <xs:enumeration value="Superstrat"/>
+        <xs:enumeration value="Lubove"/>
+        <xs:enumeration value="SG"/>
+        <xs:enumeration value="Levoruke"/>
+         </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+
+</xs:schema>
+
+

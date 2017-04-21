@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<kytara
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xsi:noNamespaceSchemaLocation='file:/Users/jakubhejny-macbook/NetBeansProjects/HTML5Application/public_html/Kytara.xsd' cena="40000" znacka="Fender">
+    <vyrobce stat="USA"></vyrobce>
+    <telo vaha="5">
+        <material barva="modra"></material>
+    </telo>
+    <krk> 
+        <profil_krku>C</profil_krku>
+    </krk>
+    <snimace pocet="2">
+        <typ_snimace>Single Coil</typ_snimace>
+    </snimace>
+    <struny tloustka="9">
+        <pocet_strun>6</pocet_strun>
+    </struny>
+    <hmatnik pocet_prazcu="21">
+        <material_hmatniku drevo="javor"></material_hmatniku>
+    </hmatnik>
+    <kobylka upevneni="tremolo"> 
+        <typ_kobylky>Vintage</typ_kobylky>
+    </kobylka>
+    <potenciometry> 
+        <potenciometr>volume</potenciometr>
+    </potenciometry>
+    <model lak="polyu"> 
+        <typ_tela>Telecaster</typ_tela>
+    </model>
+</kytara>
